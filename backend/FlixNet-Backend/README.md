@@ -1,4 +1,10 @@
-**Build a complete Netflix Clone from using Spring Boot, Java, Angular, and MySQL.**
+**The FlixNet backend is a REST API built with Java and Spring Boot that manages users, authentication, videos, and watchlists. It allows users to register, log in using JWT-based authentication, verify their email addresses, and reset their passwords.**
+
+**The application also manages video metadata, supports media file uploads and downloads, and sends email notifications for account verification and password recovery. It uses MySQL as the primary database and stores uploaded files in a configurable directory.**
+
+**Overall, the backend provides all the core functionality required for the Angular frontend to deliver a Netflix-like streaming experience, including user management, authentication, content management, and media handling.**
+
+
 
 **18-07-2026**: The WatchlistController its methods class and services are implemented. //7:16:20
 
