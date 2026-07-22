@@ -266,6 +266,7 @@
 
 /* -------- Reasons -------- */
 .reasons-wrap {
+  background: #141414;
   padding: 48px clamp(16px, 5vw, 64px) 48px;
 }
 
@@ -328,7 +329,7 @@
   z-index: 2;
   padding: 8px clamp(16px, 5vw, 64px) 32px;
   color: #fff;
-  background: transparent;
+  background: #141414;
 }
 
 .faq-title {
