@@ -25,7 +25,7 @@ export class Landing {
   }
 
   getStarted() {
-    this.route.navigate(['/signup'], { queryParams: { email: this.landingForm.value } })
+    this.route.navigate(['/signup'], { queryParams: { email: this.landingForm.get('email')?.value } })
   }
 
   reasons = [

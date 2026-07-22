@@ -6,11 +6,12 @@ import { App } from './app';
 import { Landing } from './landing/landing';
 import { SharedModule } from './shared/shared/shared-module';
 import { Signup } from './signup/signup';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [App, Landing, Signup],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
-  providers: [provideBrowserGlobalErrorListeners()],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })
 export class AppModule {}
