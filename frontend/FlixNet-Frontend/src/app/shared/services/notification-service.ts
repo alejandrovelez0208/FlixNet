@@ -8,16 +8,16 @@ export class NotificationService {
 
   constructor(private snackBar: MatSnackBar) { }
 
-  success(message: string, duration: number = 400) {
+  success(message: string, duration: number = 50000) {
     this.snackBar.open(message, 'close', {
       duration: duration,
       horizontalPosition: 'center',
       verticalPosition: 'top',
-      panelClass: ['notification-succes']
+      panelClass: ['notification-success']
     });
   }
 
-    error(message: string, duration: number = 5000) {
+    error(message: string, duration: number = 50000) {
     this.snackBar.open(message, 'close', {
       duration: duration,
       horizontalPosition: 'center',

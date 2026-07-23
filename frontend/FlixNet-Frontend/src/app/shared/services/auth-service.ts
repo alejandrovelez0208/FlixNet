@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment.development';
+import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
@@ -25,6 +25,6 @@ export class AuthService {
   }
 
   verifyEmail(token: string) {
-    return this.http.get(this.apiUrl + 'verify-email?token=' + token);
+    return this.http.get(this.apiUrl + '/verify-email?token=' + token);
   }
 }
