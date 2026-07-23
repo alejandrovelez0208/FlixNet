@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../shared/shared/services/auth-service';
+import { AuthService } from '../shared/services/auth-service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NotificationService } from '../shared/shared/services/notification-service';
-import { ErrorHandlerService } from '../shared/shared/services/error-handler-service';
+import { NotificationService } from '../shared/services/notification-service';
+import { ErrorHandlerService } from '../shared/services/error-handler-service';
 
 @Component({
   selector: 'app-signup',
@@ -27,7 +27,7 @@ export class Signup implements OnInit {
       fullName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required, this.authService.passwordMatchValidator('passwordc')]]
+      confirmPassword: ['', [Validators.required, this.authService.passwordMatchValidator('password')]]
     })
   }
 
