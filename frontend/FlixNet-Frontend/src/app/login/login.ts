@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth-service';
 import { Router } from '@angular/router';
 import { NotificationService } from '../shared/services/notification-service';
 import { ErrorHandlerService } from '../shared/services/error-handler-service';
+import { ConstantPool } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,8 @@ import { ErrorHandlerService } from '../shared/services/error-handler-service';
 export class Login implements OnInit {
   hide = true;
   loginForm !: FormGroup;
-  loading = false;
-  showResendLink = false;
+  loading = signal(false);
+  showResendLink = signal(false);
   userEmail = '';
 
   constructor(private fb: FormBuilder,
@@ -36,7 +37,7 @@ export class Login implements OnInit {
   }
 
   submit() {
-    this.loading = true;
+    this.loading.set(true);
     const formData = this.loginForm.value;
     const authData = {
       email: formData.email?.trim().toLowerCase(),
@@ -44,18 +45,18 @@ export class Login implements OnInit {
     };
     this.authService.login(authData).subscribe({
       next: (response: any) => {
-        this.loading = false;
+        this.loading.set(false);
         this.authService.redirectBasedOnRole();
       },
       error: (err) => {
-        this.loading = false;
+        this.loading.set(false);
         const errorMsg = err.error?.error || 'Login failed. Please check your credentials.';
 
         if (err.status === 403 && errorMsg.toLowerCase().includes('verify')) {
-          this.showResendLink = true;
+          this.showResendLink.set(true);
           this.userEmail = this.loginForm.value.email;
         } else {
-          this.showResendLink = false;
+          this.showResendLink.set(false);
         }
         this.notification.error(errorMsg);
         console.error('Login error:', err);
@@ -68,15 +69,15 @@ export class Login implements OnInit {
       this.notification.error('Please enter your email address');
       return;
     }
-    this.showResendLink = false;
-    this.loading = true;
+    this.showResendLink.set(false);
+    this.loading.set(true);
     this.authService.resendVerificationEmail(this.userEmail).subscribe({
       next: (response: any) => {
-        this.loading = false;
+        this.loading.set(false);
         this.notification.success(response.message || 'verification email sent Please check your inbox.');
       },
       error: (err) => {
-        this.loading = false;
+        this.loading.set(false);
         this.errorHandleServices.handle(err, 'Failed to send verification email. Please try again.')
       }
     });

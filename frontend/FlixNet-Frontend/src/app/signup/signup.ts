@@ -35,7 +35,6 @@ export class Signup implements OnInit {
     const email = this.route.snapshot.queryParams['email'];
     if (email) {
       this.signupForm.patchValue({ email: email })
-      console.log(email);
     }
   }
 

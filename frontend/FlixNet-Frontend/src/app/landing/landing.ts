@@ -20,8 +20,6 @@ export class Landing {
 
   login() {
     this.route.navigate(['/login'])
-
-
   }
 
   getStarted() {

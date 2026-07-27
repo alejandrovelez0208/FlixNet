@@ -2,6 +2,7 @@
 
 **The application uses Angular Material for its UI components and is built and served using the Angular CLI (`ng serve`). Overall, it delivers a responsive and user-friendly interface for browsing and managing streaming content.**
 
+**27-07-2026**: Implemented role-based restrictions for users and administrators.
 **26-07-2026**: The Login page is being implemented //9:24:30
 **23-07-2026**: Fixed a bug //8:58:00
 **22-07-2026**: The Verify page is created //8:58:00

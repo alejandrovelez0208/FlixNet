@@ -9,9 +9,10 @@ import { Signup } from './signup/signup';
 import { provideHttpClient } from '@angular/common/http';
 import { Login } from './login/login';
 import { VerifyEmail } from './verify-email/verify-email';
+import { Home } from './user/home/home';
 
 @NgModule({
-  declarations: [App, Landing, Signup, Login, VerifyEmail],
+  declarations: [App, Landing, Signup, Login, VerifyEmail, Home],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
