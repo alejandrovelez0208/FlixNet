@@ -7,16 +7,18 @@ import { VerifyEmail } from './verify-email/verify-email';
 import { Home } from './user/home/home';
 import { authGuard } from './shared/guards/auth-guard';
 import { adminGuard } from './shared/guards/admin-guard';
+import { ForgotPassword } from './forgot-password/forgot-password';
 
 const routes: Routes = [
   { path: '', component: Landing },
   { path: 'signup', component: Signup },
   { path: 'login', component: Login },
   { path: 'verify-email', component: VerifyEmail },
+  { path: 'forgot-password', component: ForgotPassword },
   { path: 'home', component: Home, canActivate: [authGuard] },
   {
     path: 'admin',
-    loadChildren:() =>import('../app/admin/admin-module').then(m => m.AdminModule),
+    loadChildren: () => import('../app/admin/admin-module').then(m => m.AdminModule),
     canActivate: [adminGuard]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }
