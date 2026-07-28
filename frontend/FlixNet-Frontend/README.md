@@ -2,6 +2,7 @@
 
 **The application uses Angular Material for its UI components and is built and served using the Angular CLI (`ng serve`). Overall, it delivers a responsive and user-friendly interface for browsing and managing streaming content.**
 
+**27-07-2026**: Implemented the business logic for the Forgot Password page. //10:07:28
 **27-07-2026**: Implemented HTTP interceptors..
 **27-07-2026**: Implemented role-based restrictions for users and administrators.
 **26-07-2026**: The Login page is being implemented //9:24:30
