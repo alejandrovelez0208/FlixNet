@@ -2,6 +2,7 @@
 
 **The application uses Angular Material for its UI components and is built and served using the Angular CLI (`ng serve`). Overall, it delivers a responsive and user-friendly interface for browsing and managing streaming content.**
 
+**18-08-2026**: Implemented the Reset Password view.. //10:27:04
 **27-07-2026**: Implemented the business logic for the Forgot Password page. //10:07:28
 **27-07-2026**: Implemented HTTP interceptors..
 **27-07-2026**: Implemented role-based restrictions for users and administrators.
@@ -10,5 +11,5 @@
 **22-07-2026**: The Verify page is created //8:58:00
 **22-07-2026**: Services and Signup Page are implemented //8:40:00
 **21-07-2026**: Main page is created //8:02:14
-**20-07-2026**: Landing page is implemented //7:36:17    
+**20-07-2026**: Landing page is implemented 
 **20-07-2026**: The Angular proyect is added
