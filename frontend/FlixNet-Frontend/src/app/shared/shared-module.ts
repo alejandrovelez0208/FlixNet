@@ -23,6 +23,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmDialog } from './components/confirm-dialog/confirm-dialog';
+import { Header } from './components/header/header';
+import { ChangePasswordDialog } from './components/change-password-dialog/change-password-dialog';
 
 const MATERIAL_MODULES = [
   MatIconModule,
@@ -45,18 +48,12 @@ const MATERIAL_MODULES = [
   MatSlideToggleModule,
   MatSliderModule,
   MatToolbarModule,
-  MatExpansionModule
+  MatExpansionModule,
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [ConfirmDialog, Header, ChangePasswordDialog],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, ...MATERIAL_MODULES],
-  exports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ...MATERIAL_MODULES
-  ]
+  exports: [ConfirmDialog, Header, ChangePasswordDialog, CommonModule, RouterModule, FormsModule, ReactiveFormsModule, ...MATERIAL_MODULES],
 })
 export class SharedModule { }
