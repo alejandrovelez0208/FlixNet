@@ -57,7 +57,7 @@
                             <mat-icon class="mode-icon">{{ isAdminMode ? 'home' : 'admin_panel_settings' }}</mat-icon>
                             <span>{{ isAdminMode ? 'Switch to User Mode' : 'Switch to Admin Mode' }}</span>
                         </button>
-                        }   
+                        }
 
                         @if(!isAdmin()){
                         <mat-divider></mat-divider>
@@ -83,6 +83,15 @@
 <ng-container>
     <div class="app-header">
         <ng-container *ngTemplateOutlet="headerBar"></ng-container>
+        <main class="main-content">
+            <router-outlet></router-outlet>
+        </main>
     </div>
+</ng-container>
+}
+
+@if(!showRouterOutlet){
+<ng-container>
+    <ng-container *ngTemplateOutlet="headerBar"></ng-container>
 </ng-container>
 }
