@@ -19,6 +19,7 @@ export class Header implements OnInit, OnDestroy {
   constructor(private authService: AuthService, private dialogService: DialogService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.authService.getCurrentUser());
     this.currentUser = this.authService.getCurrentUser();
     this.updateMode();
     this.routerSubscription = this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
@@ -37,7 +38,8 @@ export class Header implements OnInit, OnDestroy {
   }
 
   isAdmin(): boolean {
-    return this.currentUser?.isAdmin === 'ADMIN';
+    console.log('Current User:', this.currentUser.role);
+    return this.currentUser?.role === 'ADMIN';
   }
 
   switchMode(): void {

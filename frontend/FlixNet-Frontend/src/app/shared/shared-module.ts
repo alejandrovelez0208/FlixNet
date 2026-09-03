@@ -25,7 +25,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDialog } from './components/confirm-dialog/confirm-dialog';
 import { Header } from './components/header/header';
-import { ChangePasswordDialog } from './components/change-password-dialog/change-password-dialog';
+import { ChangePasswordDialog } from './components/change-password-dialog/change-password-dialog';    
 
 const MATERIAL_MODULES = [
   MatIconModule,
