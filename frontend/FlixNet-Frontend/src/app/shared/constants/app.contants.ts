@@ -40,9 +40,9 @@ export const DIALOG_CONFIG = {
         disableClose: false,
     },
     CHANGE_PASSWORD: {
-        width: '600px',
-        height: '90vw',
-        panelClass: 'change-password-dialog',
+        width: '800px',
+        height: 'auto',
+        panelClass: 'user-dialog',
         hasBackdrop: true,
         disableClose: false,
     },

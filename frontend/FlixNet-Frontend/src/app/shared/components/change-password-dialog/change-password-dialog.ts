@@ -17,15 +17,15 @@ export class ChangePasswordDialog {
   loading = signal(false);
 
   hideCurrent = signal(false);
-  hideNew = true;
-  hideConfirm = true;
+  hideNew = signal(false);
+  hideConfirm = signal(false);
 
   constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<ChangePasswordDialog>, private authService: AuthService,
     private notificationService: NotificationService, private errorHandlerService: ErrorHandlerService) {
     this.changePasswordForm = this.fb.group({
       currentPassword: ['', [Validators.required]],
       newPassword: ['', [Validators.required, Validators.minLength(6)]],
-      confirmNewPassword: ['', [Validators.required, this.authService.passwordMatchValidator('newPassword')]],
+      confirmPassword: ['', [Validators.required, this.authService.passwordMatchValidator('newPassword')]],
     });
   }
 
