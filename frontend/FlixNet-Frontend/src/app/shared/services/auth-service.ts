@@ -113,6 +113,6 @@ export class AuthService {
   }
 
   changePassword(changePasswordData: any) {
-    return this.http.post(this.apiUrl + '/change-password', { changePasswordData });
+    return this.http.post(this.apiUrl + '/change-password', changePasswordData);
   }
 }
